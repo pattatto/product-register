@@ -14,8 +14,8 @@ script:
 deploy:
     provider:script
     scrpt:
-        docker build -t registry.heroku.com/$HEROKU_API_NAME/web -f Dockerfile.prod .;
-        docker push registry.heroku.com/$HEROKU_API_NAME/web;
-        heroku run --app $HEROKU_API_NAME rails db:migrate;
+      docker build -t registry.heroku.com/$HEROKU_API_NAME/web -f Dockerfile.prod .;
+      docker push registry.heroku.com/$HEROKU_API_NAME/web;
+      heroku run --app $HEROKU_API_NAME rails db:migrate;
     on:
-        branch: master
+      branch: master
